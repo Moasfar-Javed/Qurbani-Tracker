@@ -1,4 +1,4 @@
-package com.example.qurbani_tracker
+package com.dijinx.qurbani
 
 import io.flutter.embedding.android.FlutterActivity
 

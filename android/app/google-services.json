@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "491558500868",
+    "project_id": "qurbani-tracker",
+    "storage_bucket": "qurbani-tracker.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:491558500868:android:245ae7d3aff34e8b41d351",
+        "android_client_info": {
+          "package_name": "com.dijinx.qurbani"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "491558500868-1nb2j8627c4porf5sg11kv34v1ub8ic3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.dijinx.qurbani",
+            "certificate_hash": "73892f5c8ffac9e08156c1418cfdfc53142bcf2c"
+          }
+        },
+        {
+          "client_id": "491558500868-qu586pkh6fs2k0ccqj09mov2ki93lb44.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDLdaN8znv966ng3Yh_s2FyEeTPWAZFyH8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "491558500868-qu586pkh6fs2k0ccqj09mov2ki93lb44.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "491558500868-23c5ukelrltof81j0sdl3u2v0b7c902f.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.qurbaniTracker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
