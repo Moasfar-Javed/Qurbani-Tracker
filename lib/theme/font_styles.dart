@@ -7,6 +7,7 @@ class FontStyles {
   static TextStyle style({FontSize size = FontSize.body, Color? textColor}) {
     var sizes = _getFontSize(size);
     return TextStyle(
+      fontFamily: 'Nunito',
       fontSize: sizes.$1,
       fontWeight: sizes.$2,
       color: textColor,

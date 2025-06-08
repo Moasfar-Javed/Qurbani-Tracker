@@ -1,6 +1,6 @@
 import 'package:bloc/bloc.dart';
 import 'package:equatable/equatable.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:qurbani_tracker/constants/constants.dart';
 import 'package:qurbani_tracker/models/models.dart';
 import 'package:qurbani_tracker/repos/repos.dart';
@@ -11,9 +11,10 @@ part 'app_state.dart';
 
 class AppCubit extends Cubit<AppState> {
   AppCubit()
-    : super(AppInitial(AppTheme.light, DarkColors(), AppThemes.lightTheme, ''));
+    : super(AppInitial(AppTheme.light, DarkColors(), AppThemes.darkTheme, ''));
 
   final SettingsRepo _settingsRepo = SettingsRepo();
+  final AuthRepo _authRepo = AuthRepo();
   final ConnectivityListener _connectivityListener = ConnectivityListener();
 
   Future<void> initialize() async {
@@ -22,40 +23,39 @@ class AppCubit extends Cubit<AppState> {
   }
 
   Future<void> _loadAppPrefs() async {
-    AppSettings settings = await _settingsRepo.getAppSettings(
-      onRemoteFetch: (value) {},
-    );
-    AppTheme theme = settings.theme;
-    String locale = settings.locale;
+    try {
+      AppSettings settings = await _settingsRepo.getAppSettings();
+      AppTheme theme = settings.theme;
+      String locale = settings.locale;
 
-    emit(
-      AppLoaded(
-        theme,
-        _getThemeColors(theme),
-        _getThemeData(theme),
-        locale,
-        appSettings: settings,
-      ),
-    );
+      emit(
+        AppLoaded(
+          theme,
+          _getThemeColors(theme),
+          _getThemeData(theme),
+          locale,
+          appSettings: settings,
+        ),
+      );
 
-    if (settings.isUserLoggedIn) {
-      // await Future.wait([
+      if (!settings.isUserLoggedIn) {
+        await _authRepo.initializeAuthAndGetSettings();
+      }
 
-      // ]);
-    } else {
-      // await _settingsRepo.refreshAppMetadata();
+      emit(
+        AppReady(
+          theme,
+          _getThemeColors(theme),
+          _getThemeData(theme),
+          locale,
+          appSettings: settings,
+          nextRoute: null,
+        ),
+      );
+    } catch (e) {
+      // todo: handle
+      print(e);
     }
-
-    emit(
-      AppReady(
-        theme,
-        _getThemeColors(theme),
-        _getThemeData(theme),
-        locale,
-        appSettings: settings,
-        nextRoute: null,
-      ),
-    );
   }
 
   Future<void> setTheme(AppTheme theme) async {
@@ -117,8 +117,8 @@ class AppCubit extends Cubit<AppState> {
   void initializeConnListener() => _connectivityListener.initialize();
   void disposeConnListener() => _connectivityListener.dispose();
 
-  ThemeData _getThemeData(AppTheme theme) {
-    return AppThemes.lightTheme;
+  CupertinoThemeData _getThemeData(AppTheme theme) {
+    return AppThemes.darkTheme;
     // uncomment when dark theme is added
     // return theme == AppTheme.dark ? AppThemes.darkTheme : AppThemes.lightTheme;
   }

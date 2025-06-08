@@ -2,7 +2,7 @@ part of 'utility.dart';
 
 class LocalDatabase {
   static Future<void> initialize() async {
-    final dbVersion = 101;
+    final dbVersion = 1;
     final dbPath = join(await getDatabasesPath(), Keys.dbName);
     debugPrint("DB Version: $dbVersion");
     debugPrint(dbPath);
@@ -69,6 +69,32 @@ class LocalDatabase {
         region TEXT, 
         isUserOnboarded INTEGER, 
         isUserLoggedIn INTEGER, 
+        ${Keys.dbCreatedOn} TEXT)
+      ''');
+
+    // qurbani table
+    batch.execute('''CREATE TABLE IF NOT EXISTS ${Keys.dbQurbanisTable}(
+        identifier TEXT PRIMARY KEY, 
+        value TEXT,
+        ${Keys.dbUpdatedOn} TEXT)
+        ${Keys.dbCreatedOn} TEXT)
+      ''');
+
+    // expenses table
+    batch.execute('''CREATE TABLE IF NOT EXISTS ${Keys.dbExpensesTable}(
+        identifier TEXT PRIMARY KEY, 
+        qurbaniIdentifier TEXT,
+        value TEXT,
+        ${Keys.dbUpdatedOn} TEXT)
+        ${Keys.dbCreatedOn} TEXT)
+      ''');
+
+    // contributions table
+    batch.execute('''CREATE TABLE IF NOT EXISTS ${Keys.dbContributionsTable}(
+        identifier TEXT PRIMARY KEY, 
+        qurbaniIdentifier TEXT,
+        value TEXT,
+        ${Keys.dbUpdatedOn} TEXT)
         ${Keys.dbCreatedOn} TEXT)
       ''');
 

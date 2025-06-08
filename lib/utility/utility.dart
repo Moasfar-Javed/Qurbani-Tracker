@@ -10,6 +10,7 @@ import 'package:sqflite/sqflite.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 import 'package:flutter_timezone/flutter_timezone.dart';
+import 'package:uuid/uuid.dart';
 
 part 'timezone_utility.dart';
 part 'haptics_util.dart';
@@ -49,5 +50,9 @@ class Utils {
 
   static bool hasSmallHeight(Size screenSize) {
     return (screenSize.height < 500);
+  }
+
+  static String genUuid() {
+    return Uuid().v4();
   }
 }

@@ -20,14 +20,14 @@ class DarkColors extends AppColors {
 
   // Surfaces
   @override
-  Color get surfacePrimary => ConstantColors.slate600;
+  Color get surfacePrimary => ConstantColors.slate700;
   @override
-  Color get surfaceSecondary => ConstantColors.slate500;
+  Color get surfaceSecondary => ConstantColors.slate600;
 
   @override
   Color get shimmerHighlight => ConstantColors.slate500;
   @override
-  Color get shimmerBase => ConstantColors.slate400;
+  Color get shimmerBase => ConstantColors.slate600;
 
   // Borders
   @override
@@ -35,7 +35,7 @@ class DarkColors extends AppColors {
   @override
   Color get borderFocused => ConstantColors.slate400;
   @override
-  Color get dividerColor => ConstantColors.slate300;
+  Color get dividerColor => ConstantColors.slate500;
 
   // Loaders
   @override

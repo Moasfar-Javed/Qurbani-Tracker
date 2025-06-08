@@ -18,26 +18,16 @@ class Paddings {
     );
   }
 
-  static EdgeInsets horizontalCardInsets(
-    BuildContext context, {
-    double top = 0,
-    double bottom = 0,
-    bool left = true,
-    bool right = true,
-  }) {
-    EdgeInsets padding = MediaQuery.of(context).padding;
-
+  static EdgeInsets cardInsets(BuildContext context) {
     return EdgeInsets.fromLTRB(
-      left ? max(padding.right, Sizes.horizontalCardPadding) : 0,
-      top,
-      right ? max(padding.right, Sizes.horizontalCardPadding) : 0,
-      bottom,
+      Sizes.horizontalCardPadding,
+      Sizes.spacingM,
+      Sizes.horizontalCardPadding,
+      Sizes.spacingM,
     );
   }
 
-  static EdgeInsets groupedMenuInsets(
-    BuildContext context,
-  ) {
+  static EdgeInsets groupedMenuInsets(BuildContext context) {
     return EdgeInsets.fromLTRB(
       Sizes.spacingL,
       Sizes.spacingXS,

@@ -12,6 +12,7 @@ class Sizes {
   static const double xxLargeIcon = 44.0;
   static const double xLargeIcon = 38.0;
   static const double largeIcon = 32.0;
+  static const double mediumIcon = 28.0;
   static const double regularIcon = 24.0;
   static const double smallIcon = 16.0;
   static const double xSmallIcon = 14.0;
@@ -37,7 +38,7 @@ class Sizes {
   static const double iconButtonBorderRadius = 200;
 
   //Font
-  static const double fontSizeXXL = 24.0; //title
+  static const double fontSizeXXL = 28.0; //title
   static const double fontSizeXL = 20.0; //heading
   static const double fontSizeL = 16.0; //bodyLarge
   static const double fontSizeM = 14.0; //body
@@ -83,7 +84,6 @@ class Sizes {
   static const double chipWrapMargin = spacingS;
   static const double chipListMargin = spacingS;
   static const double chipListHeight = 34;
-
 
   static const (double, double) splashImageSize = (130, 180);
   static const (double, double) loginImageSize = (300, 300);

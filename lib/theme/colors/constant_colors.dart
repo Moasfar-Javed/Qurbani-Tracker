@@ -40,7 +40,7 @@ class ConstantColors {
   static const Color slate300 = Color(0xFF7A7E85);
   static const Color slate400 = Color(0xFF525660);
   static const Color slate500 = Color(0xFF292F3A);
-  static const Color slate600 = Color(0XFF000715);
+  static const Color slate600 = Color.fromARGB(255, 10, 19, 36);
   static const Color slate700 = Color(0xFF000612);
   static const Color slate800 = Color(0xFF00050E);
 

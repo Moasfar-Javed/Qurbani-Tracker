@@ -6,14 +6,8 @@ enum HorizontalAlignment { left, right }
 
 enum ButtonType {
   primary,
-  primaryLight,
-  secondary,
-  tertiary,
-  tertiaryLight,
   danger,
   textOnly,
-  textOnlySecondary,
-  textOnlyTertiary,
 }
 
 enum OverlayLoaderType { circular, line }

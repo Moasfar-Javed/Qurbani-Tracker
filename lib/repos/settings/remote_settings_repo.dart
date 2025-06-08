@@ -30,11 +30,11 @@ class RemoteSettingsRepo {
     }
   }
 
-  Future<AppSettings> getAppSettings() async {
+  Future<AppSettings?> getAppSettings() async {
     try {
       final user = FirebaseAuth.instance.currentUser;
       if (user == null) {
-        throw UserNotAuthenticatedEx();
+        return null;
       }
 
       final docRef = FirebaseFirestore.instance

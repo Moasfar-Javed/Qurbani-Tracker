@@ -1,1 +1,30 @@
-{"flutter":{"platforms":{"android":{"default":{"projectId":"qurbani-tracker","appId":"1:491558500868:android:4a987aaf2afa760641d351","fileOutput":"android/app/google-services.json"}},"ios":{"default":{"projectId":"qurbani-tracker","appId":"1:491558500868:ios:810622ab20c7c14d41d351","uploadDebugSymbols":false,"fileOutput":"ios/Runner/GoogleService-Info.plist"}},"dart":{"lib/firebase_options.dart":{"projectId":"qurbani-tracker","configurations":{"android":"1:491558500868:android:4a987aaf2afa760641d351","ios":"1:491558500868:ios:810622ab20c7c14d41d351"}}}}}}
+{
+  "flutter": {
+    "platforms": {
+      "android": {
+        "default": {
+          "projectId": "qurbani-tracker",
+          "appId": "1:491558500868:android:4a987aaf2afa760641d351",
+          "fileOutput": "android/app/google-services.json"
+        }
+      },
+      "ios": {
+        "default": {
+          "projectId": "qurbani-tracker",
+          "appId": "1:491558500868:ios:810622ab20c7c14d41d351",
+          "uploadDebugSymbols": false,
+          "fileOutput": "ios/Runner/GoogleService-Info.plist"
+        }
+      },
+      "dart": {
+        "lib/firebase_options.dart": {
+          "projectId": "qurbani-tracker",
+          "configurations": {
+            "android": "1:491558500868:android:4a987aaf2afa760641d351",
+            "ios": "1:491558500868:ios:810622ab20c7c14d41d351"
+          }
+        }
+      }
+    }
+  }
+}

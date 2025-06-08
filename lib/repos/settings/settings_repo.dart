@@ -15,10 +15,16 @@ class SettingsRepo {
     _remoteRepo.saveAppSettings(settings);
   }
 
-  Future<AppSettings> getAppSettings(
-    { ValueChanged<AppSettings>? onRemoteFetch}
-  ) async {
-    _remoteRepo.getAppSettings().then((e) => onRemoteFetch?.call(e));
+  Future<AppSettings> getAppSettings({
+    ValueChanged<AppSettings?>? onRemoteFetch,
+  }) async {
+    if (onRemoteFetch != null) {
+      try {
+        _remoteRepo.getAppSettings().then((e) => onRemoteFetch.call(e));
+      } catch (e) {
+        onRemoteFetch.call(null);
+      }
+    }
     return await _localRepo.getAppSettings();
   }
 }

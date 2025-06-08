@@ -1,5 +1,5 @@
 import 'package:easy_localization/easy_localization.dart';
-import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_smart_dialog/flutter_smart_dialog.dart';
 import 'package:qurbani_tracker/app/app_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -83,7 +83,7 @@ class _AppState extends State<App> with WidgetsBindingObserver {
         }
       },
       builder: (builderContext, state) {
-        return MaterialApp(
+        return CupertinoApp(
           title: Keys.appName,
           debugShowCheckedModeBanner: false,
           theme: state.themeData,

@@ -5,7 +5,7 @@ sealed class AppState extends Equatable {
 
   final AppTheme theme;
   final AppColors colors;
-  final ThemeData themeData;
+  final CupertinoThemeData themeData;
   final String locale;
 }
 

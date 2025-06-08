@@ -5,4 +5,3 @@ class UserNotAuthenticatedEx implements Exception {}
 class UserCancelledAuthEx implements Exception {}
 
 class UserNotAnnonymousEx implements Exception {}
-

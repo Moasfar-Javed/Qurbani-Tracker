@@ -14,6 +14,9 @@ class Keys {
   static const String dbMetadataTable = 'metadata';
   static const String dbUserMetadataTable = 'userMetadata';
   static const String dbSettingsTable = 'settings';
+  static const String dbQurbanisTable = 'qurbanis';
+  static const String dbExpensesTable = 'expenses';
+  static const String dbContributionsTable = 'contributions';
 
   static const List<String> clearOnLogoutTables = [dbUserMetadataTable];
 
