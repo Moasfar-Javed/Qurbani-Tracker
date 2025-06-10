@@ -120,12 +120,17 @@ class QurbaniRepo {
   }
 
   Future<ExpenseSaveResponse> deleteExpense(ExpenseModel expense) async {
-    final res = await _remoteRepo.deleteExpense(expense);
-    if (res.status) {
+    if (expense.isLocal) {
       await _localRepo.deleteExpense(expense);
+      return ExpenseSaveResponse.success();
+    } else {
+      final res = await _remoteRepo.deleteExpense(expense);
+      if (res.status) {
+        await _localRepo.deleteExpense(expense);
+        return res;
+      }
       return res;
     }
-    return res;
   }
 
   //-- Contributions
@@ -190,11 +195,16 @@ class QurbaniRepo {
   Future<ContributionSaveResponse> deleteContribution(
     ContributionModel expense,
   ) async {
-    final res = await _remoteRepo.deleteContribution(expense);
-    if (res.status) {
+    if (expense.isLocal) {
       await _localRepo.deleteContribution(expense);
+      return ContributionSaveResponse.success();
+    } else {
+      final res = await _remoteRepo.deleteContribution(expense);
+      if (res.status) {
+        await _localRepo.deleteContribution(expense);
+        return res;
+      }
       return res;
     }
-    return res;
   }
 }
